@@ -20,12 +20,20 @@ For full documentation, visit [noramp.io](https://noramp.io).
 
 ```bash
 
-yarn add @noramp/norampkit
+npm i norampkit
+
+```
+
+or
+
+```bash
+
+yarn add norampkit
 
 ```
 
 ```javascript
-import { NoRampOneClick } from '@noramp/norampkit';
+import { NoRampOneClick } from 'norampkit';
 
 <NoRampOneClick priceId="PRICE_ID" appId="APP_ID" testnet auth />;
 ```
