@@ -1,0 +1,47 @@
+.button {
+  /*    gap-1 p-2    rounded-lg h-min focus:z-10 */
+  background-color: #111112;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0px 18px 0px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: white;
+  border-radius: 4px;
+  z-index: 10;
+  transition: 0.2s ease-in-out;
+  height: 40px;
+
+  position: relative;
+
+  border: none;
+}
+
+.button:hover {
+  background-color: #2b3041;
+}
+
+.button:disabled::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+}
+
+.button span {
+  /*   px-4 py-2 text-sm  */
+  color: white;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
