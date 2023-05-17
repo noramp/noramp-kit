@@ -14,9 +14,15 @@ NoRampKit is a [React](https://reactjs.org/) library that makes it easy to add a
 
 ## Documentation
 
-For full documentation, visit [noramp.io](https://noramp.io).
+For full documentation, visit [docs.noramp.io](https://docs.noramp.io).
+
+## Tutorial
+
+Follow alongside a tutorial, visit [medium.com/@NoRamp](https://medium.com/@NoRamp/introducing-norampkit-the-npm-package-for-nft-credit-card-checkout-c296cb3a486b).
 
 # Quick start
+
+## Install
 
 ```bash
 
@@ -32,35 +38,15 @@ yarn add norampkit
 
 ```
 
+## Usage
+
+Sign up on [app.noramp.io](https://app.noramp.io) in order to generate your APP_ID and create a PRICE_ID for your NFT sales.
+
 ```javascript
 import { NoRampOneClick } from 'norampkit';
 
-<NoRampOneClick priceId="PRICE_ID" appId="APP_ID" testnet auth />;
+<NoRampOneClick priceId="PRICE_ID" appId="APP_ID" testnet />;
 ```
-
-### Running examples
-
-Go into an example directory, eg:
-
-```bash
-cd examples/
-```
-
-Install dependencies.
-
-```bash
-yarn
-```
-
-Then run the dev script.
-
-```bash
-yarn start
-```
-
-## Contributing
-
-Please follow our [contributing guidelines](./.github/CONTRIBUTING.md).
 
 ## License
 
