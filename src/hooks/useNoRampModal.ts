@@ -1,11 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 type Config = {
-  appId: string;
   priceId: string;
+  appId?: string;
   testnet?: boolean;
   theme?: 'dark' | 'light';
-  auth?: boolean;
   onEvent?: (payload: any) => void;
   onSuccess?: (payload: any) => void;
   onFailure?: (payload: any) => void;
@@ -40,27 +39,26 @@ const useNoRampModal = (config: Config) => {
     },
     [config]
   );
-  const getBaseUrl = useCallback((appId: string, testnet: boolean) => {
+  const getBaseUrl = useCallback((testnet: boolean) => {
     const baseUrl = testnet
-      ? 'https://testnet.noramp.io'
-      : 'https://app.noramp.io';
+      ? 'https://checkout-testnet.noramp.io'
+      : 'https://checkout.noramp.io';
 
-    // const baseUrl = 'http://localhost:3000';
-    return `${baseUrl}/embed/payments/${appId}`;
+    return `${baseUrl}`;
   }, []);
 
   const getSrc = useCallback(
     (config: Config, testnet: boolean) => {
-      const { appId, priceId, theme = 'dark' } = config;
-      const urlParams: Record<string, string> = {
-        device: 'desktop',
-        theme,
-        auth: config.auth ? 'true' : 'false',
-        price_id: priceId,
-      };
-      const urlSearchParams = new URLSearchParams(urlParams);
-      const baseUrl = getBaseUrl(appId, testnet);
-      return `${baseUrl}?${urlSearchParams.toString()}`;
+      const { priceId, theme = 'dark' } = config;
+      // const urlParams: Record<string, string> = {
+      //   device: 'desktop',
+      //   theme,
+      //   auth: config.auth ? 'true' : 'false',
+      //   price_id: priceId,
+      // };
+      // const urlSearchParams = new URLSearchParams(urlParams);
+      const baseUrl = getBaseUrl(testnet);
+      return `${baseUrl}/${priceId}`;
     },
     [getBaseUrl]
   );
