@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 type Config = {
   priceId: string;
-  appId?: string;
   testnet?: boolean;
   theme?: 'dark' | 'light';
   onEvent?: (payload: any) => void;

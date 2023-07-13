@@ -40,12 +40,12 @@ yarn add norampkit
 
 ## Usage
 
-Sign up on [app.noramp.io](https://app.noramp.io) in order to generate your APP_ID and create a PRICE_ID for your NFT sales.
+Sign up on [app.noramp.io](https://app.noramp.io) in order to generate and create a PRICE_ID for your NFT sales.
 
 ```javascript
 import { NoRampOneClick } from 'norampkit';
 
-<NoRampOneClick priceId="PRICE_ID" appId="APP_ID" testnet />;
+<NoRampOneClick priceId="PRICE_ID" testnet />;
 ```
 
 ## License

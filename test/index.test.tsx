@@ -5,7 +5,7 @@ import { NoRampOneClick } from '../src';
 describe('it', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<NoRampOneClick priceId="" appId="" testnet />, div);
+    ReactDOM.render(<NoRampOneClick priceId="" testnet />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });
