@@ -1,7 +1,7 @@
 # NoRampKit
 
 <a href="https://noramp.io">
-<img alt="norampkit" src="https://i.imgur.com/ZrFnYcd.jpg" />
+<img alt="norampkit" src="https://i.imgur.com/0cl3hkv.png" />
 </a>
 
 **The best way to accept credit card payments for your NFTs 🛹**
