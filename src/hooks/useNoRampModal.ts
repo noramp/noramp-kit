@@ -10,7 +10,7 @@ type Config = {
   onClose?: (payload: any) => void;
 };
 
-const useNoRampModal = (config: Config) => {
+export const useNoRampModal = (config: Config) => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const frameIdRef = useRef<string>('');
 
