@@ -5,14 +5,9 @@ import useNoRampModal from './hooks/useNoRampModal';
 export interface NoRampProps {
   priceId: string;
   testnet?: boolean;
-  auth?: boolean;
 }
 
-export const NoRampOneClick = ({
-  priceId,
-  testnet = false,
-  auth = false,
-}: NoRampProps) => {
+export const NoRampOneClick = ({ priceId, testnet = false }: NoRampProps) => {
   const { open, isOpen } = useNoRampModal({
     priceId,
     testnet,
