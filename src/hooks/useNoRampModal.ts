@@ -1,16 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { NoRampConfig } from '../types';
 
-type Config = {
-  priceId: string;
-  testnet?: boolean;
-  theme?: 'dark' | 'light';
-  onEvent?: (payload: any) => void;
-  onSuccess?: (payload: any) => void;
-  onFailure?: (payload: any) => void;
-  onClose?: (payload: any) => void;
-};
-
-export const useNoRampModal = (config: Config) => {
+export const useNoRampModal = (config: NoRampConfig) => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const frameIdRef = useRef<string>('');
 
@@ -47,15 +38,9 @@ export const useNoRampModal = (config: Config) => {
   }, []);
 
   const getSrc = useCallback(
-    (config: Config, testnet: boolean) => {
-      const { priceId, theme = 'dark' } = config;
-      // const urlParams: Record<string, string> = {
-      //   device: 'desktop',
-      //   theme,
-      //   auth: config.auth ? 'true' : 'false',
-      //   price_id: priceId,
-      // };
-      // const urlSearchParams = new URLSearchParams(urlParams);
+    (config: NoRampConfig, testnet: boolean) => {
+      const { priceId } = config;
+
       const baseUrl = getBaseUrl(testnet);
       return `${baseUrl}/${priceId}`;
     },
