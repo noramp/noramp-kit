@@ -11,6 +11,9 @@ export const useNoRampModal = (config: NoRampConfig) => {
     (event: MessageEvent<any>) => {
       const { onEvent, onSuccess, onFailure, onClose } = config;
 
+      const type = event.data?.detail?.type;
+      const status = event.data?.detail?.data?.status;
+
       switch (event.data?.event) {
         case 'noramp:close':
           close();
@@ -22,8 +25,14 @@ export const useNoRampModal = (config: NoRampConfig) => {
         case 'noramp:event':
           onEvent?.(event.data?.payload);
           break;
-        case 'noramp:success':
-          onSuccess?.(event.data?.payload);
+        // case 'noramp:success':
+        //   onSuccess?.(event.data?.payload);
+        //   break;
+
+        case 'noramp:onPayment':
+          if (type === 'finished' && status === 'paid') {
+            onSuccess?.(event.data?.detail);
+          }
           break;
       }
     },

@@ -2,7 +2,17 @@ import { NoRampOneClick } from '../../.';
 import './App.css';
 
 const App = () => {
-  return <NoRampOneClick priceId="price_2tq5KPW6lybhBxcuDw9icb" testnet />;
+  const handleSuccess = (data: any) => {
+    console.log('Success: ', JSON.stringify(data, null, 2));
+  };
+
+  return (
+    <NoRampOneClick
+      priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
+      testnet
+      onSuccess={handleSuccess}
+    />
+  );
 };
 
 export default App;
