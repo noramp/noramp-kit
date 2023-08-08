@@ -7,11 +7,22 @@ const App = () => {
   };
 
   return (
-    <NoRampOneClick
-      priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-      testnet
-      onSuccess={handleSuccess}
-    />
+    <div className="container">
+      <p className="title">Light theme:</p>
+      <NoRampOneClick
+        priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
+        testnet
+        onSuccess={handleSuccess}
+        theme="light"
+      />
+      <p className="title">Dark theme:</p>
+      <NoRampOneClick
+        priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
+        testnet
+        onSuccess={handleSuccess}
+        theme="dark"
+      />
+    </div>
   );
 };
 

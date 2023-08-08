@@ -48,10 +48,17 @@ export const useNoRampModal = (config: NoRampConfig) => {
 
   const getSrc = useCallback(
     (config: NoRampConfig, testnet: boolean) => {
-      const { priceId } = config;
+      const { priceId, theme } = config;
 
       const baseUrl = getBaseUrl(testnet);
-      return `${baseUrl}/${priceId}`;
+
+      let url = `${baseUrl}/${priceId}`;
+
+      if (theme) {
+        url += `?theme=${theme}`;
+      }
+
+      return url;
     },
     [getBaseUrl]
   );
