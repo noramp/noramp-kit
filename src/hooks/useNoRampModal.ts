@@ -94,9 +94,9 @@ export const useNoRampModal = (config: NoRampConfig) => {
       );
 
       window.addEventListener('message', eventHandler, false);
-      const targetOrigin = 'https://checkout-testnet.noramp.io';
+      const targetOrigin = getBaseUrl(testnet);
 
-      const frame: any = document.querySelector('#apple-pay-frame');
+      const frame: any = document.querySelector('[title="NoRamp"]');
 
       const outputElement = document.querySelector('#output');
 
