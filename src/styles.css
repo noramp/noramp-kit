@@ -1,0 +1,69 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0px 18px 0px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  border-radius: 4px;
+  z-index: 10;
+  transition: 0.2s ease-in-out;
+  height: 40px;
+  position: relative;
+  border: none;
+  background-color: red;
+}
+
+.button:disabled::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 4px;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  cursor: not-allowed;
+}
+
+/* light theme */
+
+.button-light {
+  background-color: #ffffff;
+
+  color: #000000;
+}
+
+.button-light:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.button-light:disabled::before {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* dark theme */
+
+.button-dark {
+  background-color: #000000;
+
+  color: #ffffff;
+}
+
+.button-dark:hover {
+  /* background-color: #2b3041; */
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.button-dark:disabled::before {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* others */
+
+.icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
