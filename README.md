@@ -4,13 +4,13 @@
 <img alt="norampkit" src="https://i.imgur.com/0cl3hkv.png" />
 </a>
 
-**The best way to accept credit card payments for your NFTs 🛹**
+**The best way to accept credit card payments for your NFTs 🏎️**
 
 NoRampKit is a [React](https://reactjs.org/) library that makes it easy to add a 1-click NFT checkout to your dapp.
 
 - 🔥 Out-of-the-box Payment Button
 - ✅ Easily customizable
-- 🦄 Built on top of trusted partners like [stripe](https://stripe.com/connect)
+- 🦄 Built on top of trusted partners like [stripe](https://stripe.com/connect) and [plaid](https://plaid.com)
 
 ## Documentation
 
