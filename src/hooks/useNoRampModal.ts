@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { NoRampConfig } from '../types';
+import { loadStripe } from '@stripe/stripe-js';
 
 export const useNoRampModal = (config: NoRampConfig) => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
@@ -87,7 +88,83 @@ export const useNoRampModal = (config: NoRampConfig) => {
     const src = getSrc(config, testnet);
     insertIframe(src);
 
-    window.addEventListener('message', eventHandler, false);
+    const applePay = async () => {
+      const stripe = await loadStripe(
+        'pk_test_51Kvq6SIkFYA0Bt9COhStV61cQKyfUE8QoJyTSnDi2s0a6OsKiMLTqN0Cm8q1kjqIXzMpB8ZWF60vWIQFIjT3JWWm00IpaUbajk'
+      );
+
+      window.addEventListener('message', eventHandler, false);
+      const targetOrigin = getBaseUrl(testnet);
+
+      const frame: any = document.querySelector('[title="NoRamp"]');
+
+      const outputElement = document.querySelector('#output');
+
+      let paymentResponse: any;
+
+      const paymentRequest = stripe!.paymentRequest({
+        country: 'US',
+        currency: 'usd',
+        total: {
+          label: 'Apple Pay in a Frame!',
+          amount: 0,
+          pending: true,
+        },
+        requestPayerName: true,
+        requestPayerEmail: true,
+      });
+
+      window.addEventListener('message', (event) => {
+        if (event.origin !== targetOrigin) {
+          return;
+        }
+
+        if (event.data.type == 'letsGo') {
+          (async () => {
+            const result = await paymentRequest.canMakePayment();
+
+            if (result && result.applePay) {
+              frame!.contentWindow.postMessage(
+                {
+                  type: 'canMakePayment',
+                },
+                targetOrigin
+              );
+            } else {
+              outputElement!.innerHTML =
+                '<strong>Error:</strong> <code>paymentRequest.canMakePayment()</code> indicated Apple Pay cannot be used.  Try opening this page in Safari and make sure you have a valid payment card in your Apple Wallet.';
+            }
+          })();
+        }
+
+        if (event.data.type == 'requestPayment') {
+          paymentRequest.show();
+        }
+
+        if (event.data.type == 'completePaymentRequest') {
+          paymentResponse!.complete(event.data.status);
+        }
+      });
+
+      paymentRequest.on('paymentmethod', async (event: any) => {
+        outputElement!.innerHTML =
+          '<p>Got a Payment Method: <code>' +
+          event.paymentMethod.id +
+          '</code></p><p>Sending it to the frame!</p>';
+
+        paymentResponse = event;
+
+        frame.contentWindow.postMessage(
+          {
+            messageType: 'paymentMethod',
+            paymentMethod: event.paymentMethod.id,
+          },
+          targetOrigin
+        );
+      });
+    };
+
+    applePay();
 
     return () => {
       window.removeEventListener('message', eventHandler, false);
