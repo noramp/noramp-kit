@@ -2,7 +2,6 @@
   font-family: 'Roobert';
   src: url('./fonts/roobert-regular.woff2') format('woff2');
 }
-
 .button {
   display: flex;
   align-items: center;
