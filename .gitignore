@@ -6,3 +6,4 @@ dist
 .env
 
 yarn.lock
+example/yarn.lock
