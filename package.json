@@ -19,7 +19,7 @@
     "start": "dts watch",
     "test": "dts test --passWithNoTests",
     "format": "prettier --write .",
-    "preinstall": "npx allow-only pnpm"
+    "preinstall": "npx only-allow pnpm"
   },
   "husky": {
     "hooks": {
