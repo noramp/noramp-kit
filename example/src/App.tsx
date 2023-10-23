@@ -1,4 +1,4 @@
-import { NoRampOneClick } from '../../.';
+import { NoRampOneClick } from '../../src';
 
 const App = () => {
   const handleSuccess = (data: any) => {
