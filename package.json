@@ -18,7 +18,8 @@
     "size": "size-limit",
     "start": "dts watch",
     "test": "dts test --passWithNoTests",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "preinstall": "npx allow-only pnpm"
   },
   "husky": {
     "hooks": {
