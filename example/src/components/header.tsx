@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-import ThemeSwitcher from './ui/theme-switcher/theme-switcher';
 import Logo from './ui/logo';
 
 import React, { useState } from 'react';
@@ -14,31 +13,8 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from '@nextui-org/react';
-// import {AcmeLogo} from "./AcmeLogo.jsx";
 
 const Header = () => {
-  // return (
-  //   <div className="items-center hidden h-16 md:flex">
-  //     <div className="container flex gap-4 mx-auto lg:gap-10">
-  //       <Link to="/" className="text-lg hover:font-bold">
-  //         <Logo />
-  //       </Link>
-
-  //       <Link to="/checkout" className="text-lg hover:font-bold">
-  //         Checkout Widget
-  //       </Link>
-
-  //       <Link to="/kyc" className="text-lg hover:font-bold">
-  //         KYC Widget
-  //       </Link>
-
-  //       <Link to="/payout" className="text-lg hover:font-bold">
-  //         Payout Widget
-  //       </Link>
-  //     </div>
-  //   </div>
-  // );
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
