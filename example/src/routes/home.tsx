@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import { NoRampOneClick } from '../../../src';
-import Header from '../components/header';
 
 export default function Home() {
   const handleSuccess = (data: any) => {
@@ -9,7 +7,7 @@ export default function Home() {
 
   return (
     <div className="container mx-auto">
-      <div className="p-6 bg-gray-100">
+      <div className="p-6 ">
         <h1 className="mb-4 text-3xl font-bold">NoRampKit</h1>
         <a href="https://noramp.io" className="flex justify-center ">
           <img

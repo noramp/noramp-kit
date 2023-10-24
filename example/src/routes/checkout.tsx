@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { NoRampOneClick, NoRampPayout } from '../../../src';
+import { NoRampOneClick } from '../../../src';
 import ThemeSwitcher from '../components/ui/theme-switcher/theme-switcher';
 
 const Checkout = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
   const handleThemeChange = (checked: boolean) => {
-    setTheme(checked ? 'light' : 'dark');
+    setTheme(checked ? 'dark' : 'light');
   };
 
   const handleSuccess = (data: any) => {
@@ -16,7 +16,7 @@ const Checkout = () => {
   return (
     <div className="container flex mx-auto my-0 ">
       <div className="flex flex-col items-center w-full ">
-        <div className="flex items-center justify-between w-full ">
+        <div className="flex items-center justify-between w-full max-w-4xl ">
           <p className="my-4 text-2xl font-bold">Checkout Widget</p>
 
           <div className="">
@@ -90,7 +90,7 @@ const Checkout = () => {
           </div>
         </div>
 
-        <div className="flex flex-col justify-start w-full mt-12">
+        <div className="flex flex-col justify-start w-full max-w-4xl mt-12">
           <h3 className="mb-2 text-lg font-bold">Usage</h3>
           <p className="mb-4">
             Sign up on{' '}

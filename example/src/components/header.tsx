@@ -35,7 +35,11 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} isMenuOpen={isMenuOpen}>
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      isMenuOpen={isMenuOpen}
+      className="bg-[#121212] text-white border-b border-gray-200/20"
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -51,15 +55,18 @@ const Header = () => {
 
       <NavbarContent className="hidden gap-10 sm:flex" justify="center">
         <NavbarItem isActive={location.pathname === '/checkout'}>
-          <Link color="foreground" to="/checkout">
+          <Link className="text-gray-400 hover:text-gray-200" to="/checkout">
             Checkout
           </Link>
         </NavbarItem>
-        <NavbarItem isActive={location.pathname === '/kyc'}>
+        <NavbarItem
+          className="text-gray-400 hover:text-gray-200"
+          isActive={location.pathname === '/kyc'}
+        >
           <Link to="/kyc">KYC</Link>
         </NavbarItem>
         <NavbarItem isActive={location.pathname === '/payout'}>
-          <Link color="foreground" to="/payout">
+          <Link className="text-gray-400 hover:text-gray-200" to="/payout">
             Payout
           </Link>
         </NavbarItem>
@@ -71,23 +78,16 @@ const Header = () => {
             color="primary"
             target="_blank"
             href="https://dashboard.noramp.io/?utm_source=norampkit"
-            variant="flat"
+            variant="solid"
           >
             Get Stated
           </Button>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu hidden={!isMenuOpen}>
+      <NavbarMenu hidden={!isMenuOpen} className="bg-[#111111] text-slate-100">
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem key={`${item}-${index}`} className="bg-transparent">
             <Link
-              color={
-                index === 2
-                  ? 'primary'
-                  : index === menuItems.length - 1
-                  ? 'danger'
-                  : 'foreground'
-              }
               className="w-full"
               to={item.href}
               onClick={() => setIsMenuOpen(false)}

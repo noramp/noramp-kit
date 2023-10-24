@@ -15,12 +15,12 @@ export default function ThemeSwitcher({ onChange }: ThemeSwitcherProps) {
         onChange(isSelected);
       }}
       size="lg"
-      color="secondary"
+      color="primary"
       thumbIcon={({ isSelected, className }) =>
         isSelected ? (
-          <SunIcon className={className} />
-        ) : (
           <MoonIcon className={className} />
+        ) : (
+          <SunIcon className={className} />
         )
       }
     ></Switch>
