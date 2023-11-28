@@ -4,6 +4,7 @@ import './index.css';
 import { RouterProvider, createHashRouter } from 'react-router-dom';
 import Home from './routes/home';
 import Checkout from './routes/checkout';
+import Connect from './routes/connect';
 import Marketplace from './routes/kyc';
 import Header from './components/header';
 import Layout from './components/layout';
@@ -25,6 +26,14 @@ const router = createHashRouter([
     element: (
       <Layout>
         <Checkout />
+      </Layout>
+    ),
+  },
+  {
+    path: '/connect',
+    element: (
+      <Layout>
+        <Connect />
       </Layout>
     ),
   },
