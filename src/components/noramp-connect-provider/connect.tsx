@@ -16,7 +16,7 @@ import {
   RainbowKitProvider,
   Theme,
 } from '@rainbow-me/rainbowkit';
-import { configureChains, createConfig, WagmiConfig } from 'wagmi';
+import { configureChains, createConfig, useAccount, WagmiConfig } from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum, base, zora } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
@@ -24,7 +24,7 @@ import { publicProvider } from 'wagmi/providers/public';
 export const NoRampConnectProvider = ({ children }: any): JSX.Element => {
   const { chains, publicClient } = configureChains(
     [mainnet, polygon, optimism, arbitrum, base, zora],
-    [alchemyProvider({ apiKey: '' as string }), publicProvider()]
+    [publicProvider()]
   );
 
   const { connectors } = getDefaultWallets({
@@ -33,7 +33,7 @@ export const NoRampConnectProvider = ({ children }: any): JSX.Element => {
     chains,
   });
 
-  const wagmiConfig = createConfig({
+  const config = createConfig({
     autoConnect: true,
     connectors,
     publicClient,
@@ -46,7 +46,7 @@ export const NoRampConnectProvider = ({ children }: any): JSX.Element => {
   } as Theme);
 
   return (
-    <WagmiConfig config={wagmiConfig}>
+    <WagmiConfig config={config}>
       <RainbowKitProvider chains={chains} theme={myTheme}>
         {children}
       </RainbowKitProvider>
