@@ -30,6 +30,14 @@ const Header = () => {
       title: 'Payout',
       href: '/payout',
     },
+    {
+      title: 'Connect',
+      href: '/connect',
+    },
+    {
+      title: 'Cashout',
+      href: '/cashout',
+    },
   ];
 
   const location = useLocation();
@@ -68,6 +76,16 @@ const Header = () => {
         <NavbarItem isActive={location.pathname === '/payout'}>
           <Link className="text-gray-400 hover:text-gray-200" to="/payout">
             Payout
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive={location.pathname === '/connect'}>
+          <Link className="text-gray-400 hover:text-gray-200" to="/connect">
+            Connect
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive={location.pathname === '/cashout'}>
+          <Link className="text-gray-400 hover:text-gray-200" to="/cashout">
+            Cashout
           </Link>
         </NavbarItem>
       </NavbarContent>

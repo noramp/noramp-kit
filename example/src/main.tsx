@@ -4,12 +4,14 @@ import './index.css';
 import { RouterProvider, createHashRouter } from 'react-router-dom';
 import Home from './routes/home';
 import Checkout from './routes/checkout';
+import Connect from './routes/connect';
 import Marketplace from './routes/kyc';
 import Header from './components/header';
 import Layout from './components/layout';
 import Kyc from './routes/kyc';
 import Payout from './routes/payout';
 import { NextUIProvider } from '@nextui-org/react';
+import Cashout from './routes/cashout';
 
 const router = createHashRouter([
   {
@@ -25,6 +27,22 @@ const router = createHashRouter([
     element: (
       <Layout>
         <Checkout />
+      </Layout>
+    ),
+  },
+  {
+    path: '/connect',
+    element: (
+      <Layout>
+        <Connect />
+      </Layout>
+    ),
+  },
+  {
+    path: '/cashout',
+    element: (
+      <Layout>
+        <Cashout />
       </Layout>
     ),
   },
