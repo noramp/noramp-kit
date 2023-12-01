@@ -26,3 +26,33 @@ export type NoRampConfig = {
   onFailure?: (payload: any) => void;
   onClose?: (payload: any) => void;
 };
+
+export type NoRampKycProps = {
+  token: string;
+  testnet?: boolean;
+  theme?: 'light' | 'dark' | null;
+  height?: string;
+  width?: string;
+};
+
+export type NoRampCashoutProps = {
+  testnet?: boolean;
+  theme?: 'light' | 'dark' | null;
+  height?: string;
+  width?: string;
+};
+
+export type NoRampConnectProps = {
+  testnet?: boolean;
+  theme?: 'light' | 'dark' | null;
+  height?: string;
+  width?: string;
+};
+
+export type NoRampPayoutProps = {
+  token: string;
+  testnet?: boolean;
+  theme?: 'light' | 'dark' | null;
+  height?: string;
+  width?: string;
+};

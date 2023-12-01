@@ -1,22 +1,12 @@
 import './styles.css';
 import React from 'react';
-import { useAccount } from 'wagmi';
-import { NoRampConfig } from '../../types';
-
+import { NoRampConnectProps } from '../../types';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
-import { NoRampConnectProvider } from '../noramp-connect-provider/connect';
-
 export const NoRampConnect = ({
-  priceId = 'price_3O7ZpGp3BmILQOQhlzk2Pg',
   testnet = false,
-  type = 'buy',
-  buttonTheme = 'dark',
+  theme = 'dark',
   ...config
-}: NoRampConfig) => {
-  return (
-    <NoRampConnectProvider>
-      <ConnectButton showBalance={false} />
-    </NoRampConnectProvider>
-  );
+}: NoRampConnectProps) => {
+  return <ConnectButton showBalance={false} />;
 };

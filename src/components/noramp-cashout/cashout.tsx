@@ -1,13 +1,6 @@
 import React from 'react';
 import NoRampLogo from '../NoRampLogo';
-
-type NoRampCashoutProps = {
-  token: string;
-  testnet?: boolean;
-  theme?: 'light' | 'dark' | null;
-  height?: string;
-  width?: string;
-};
+import { NoRampCashoutProps } from '../../types';
 
 export const NoRampCashout = ({
   height = '440',

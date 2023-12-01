@@ -21,7 +21,7 @@ const Cashout = () => {
         </div>
 
         <div className="w-full max-w-4xl overflow-auto ">
-          <NoRampCashout token={''} />
+          <NoRampCashout />
         </div>
 
         <div className="flex flex-col justify-start w-full max-w-4xl mt-12">

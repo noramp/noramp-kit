@@ -2,14 +2,7 @@ import './styles.css';
 
 import React from 'react';
 import { getNoRampAppBaseUrl } from '../../utils/noramp-app';
-
-type NoRampKycProps = {
-  token: string;
-  testnet?: boolean;
-  theme?: 'light' | 'dark' | null;
-  height?: string;
-  width?: string;
-};
+import { NoRampKycProps } from '../../types';
 
 export const NoRampKyc = ({
   token,

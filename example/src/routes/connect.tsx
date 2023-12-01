@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NoRampConnect } from '../../../src';
+import { NoRampConnect, NoRampConnectProvider } from '../../../src';
 import ThemeSwitcher from '../components/ui/theme-switcher/theme-switcher';
 
 const Connect = () => {
@@ -21,7 +21,9 @@ const Connect = () => {
         </div>
 
         <div className="w-full max-w-4xl overflow-auto ">
-          <NoRampConnect priceId="" />
+          <NoRampConnectProvider>
+            <NoRampConnect />
+          </NoRampConnectProvider>
         </div>
 
         <div className="flex flex-col justify-start w-full max-w-4xl mt-12">

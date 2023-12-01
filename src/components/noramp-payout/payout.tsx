@@ -3,14 +3,7 @@ import React from 'react';
 import './styles.css';
 
 import { getNoRampAppBaseUrl } from '../../utils/noramp-app';
-
-type NoRampPayoutProps = {
-  token: string;
-  testnet?: boolean;
-  theme?: 'light' | 'dark' | null;
-  height?: string;
-  width?: string;
-};
+import { NoRampPayoutProps } from '../../types';
 
 export const NoRampPayout = ({
   token,
