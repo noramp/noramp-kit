@@ -25,6 +25,7 @@ export type NoRampConfig = {
   onSuccess?: (payload: any) => void;
   onFailure?: (payload: any) => void;
   onClose?: (payload: any) => void;
+  user?: string;
 };
 
 export type NoRampKycProps = {

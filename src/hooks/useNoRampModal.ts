@@ -49,17 +49,24 @@ export const useNoRampModal = (config: NoRampConfig) => {
 
   const getSrc = useCallback(
     (config: NoRampConfig, testnet: boolean) => {
-      const { priceId, theme } = config;
+      const { priceId, theme, user } = config;
 
       const baseUrl = getBaseUrl(testnet);
 
-      let url = `${baseUrl}/${priceId}`;
+      const queryParams: string[] = [];
 
       if (theme) {
-        url += `?theme=${theme}`;
+        queryParams.push(`theme=${theme}`);
       }
 
-      return url;
+      if (user) {
+        queryParams.push(`user=${user}`);
+      }
+
+      const queryString =
+        queryParams.length > 0 ? `?${queryParams.join('&')}` : '';
+
+      return `${baseUrl}/${priceId}${queryString}`;
     },
     [getBaseUrl]
   );

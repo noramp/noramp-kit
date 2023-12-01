@@ -33,6 +33,7 @@ const Checkout = () => {
               theme={theme}
               type="buy"
               buttonTheme={theme}
+              user="pepi@noramp.io"
             />
           </div>
 
@@ -108,7 +109,8 @@ const Checkout = () => {
 <NoRampOneClick 
   priceId="PRICE_ID" 
   theme={"light" | "dark"} 
-  testnet 
+  testnet
+  user="gavin@hooli.xyz"
 />`}
           </pre>
         </div>
