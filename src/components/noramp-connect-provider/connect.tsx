@@ -7,7 +7,7 @@ import NoRampLogo from '../NoRampLogo';
 import { TYPE_LABELS } from '../../constants';
 import useNoRampModal from '../../hooks/useNoRampModal';
 import { NoRampConfig } from '../../types';
-import '@rainbow-me/rainbowkit/styles.css';
+// import '@rainbow-me/rainbowkit/styles.css';
 
 import {
   ConnectButton,

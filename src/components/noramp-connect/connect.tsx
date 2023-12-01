@@ -1,5 +1,5 @@
-import React from 'react';
 import './styles.css';
+import React from 'react';
 import { useAccount } from 'wagmi';
 import { NoRampConfig } from '../../types';
 import '@rainbow-me/rainbowkit/styles.css';
