@@ -1,16 +1,7 @@
 import './styles.css';
 import React from 'react';
 import merge from 'lodash.merge';
-import { useCallback } from 'react';
-import LoadingIcon from '../LoadingIcon';
-import NoRampLogo from '../NoRampLogo';
-import { TYPE_LABELS } from '../../constants';
-import useNoRampModal from '../../hooks/useNoRampModal';
-import { NoRampConfig } from '../../types';
-// import '@rainbow-me/rainbowkit/styles.css';
-
 import {
-  ConnectButton,
   darkTheme,
   getDefaultWallets,
   RainbowKitProvider,

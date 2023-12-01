@@ -2,7 +2,6 @@ import './styles.css';
 import React from 'react';
 import { useAccount } from 'wagmi';
 import { NoRampConfig } from '../../types';
-import '@rainbow-me/rainbowkit/styles.css';
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
