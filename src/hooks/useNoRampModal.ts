@@ -46,9 +46,7 @@ export const useNoRampModal = (config: NoRampConfig) => {
     async function applePay() {
       const frame = iframeRef.current;
 
-      const outputElement = document.querySelector('#output');
-
-      if (!frame || !outputElement) {
+      if (!frame) {
         return;
       }
 
@@ -66,20 +64,21 @@ export const useNoRampModal = (config: NoRampConfig) => {
         currency: 'usd',
         total: {
           label: 'NoRamp',
-          amount: 100,
+          amount: 0,
+          pending: true,
         },
         requestPayerName: true,
         requestPayerEmail: true,
       });
 
       window.addEventListener('message', (event) => {
-        console.log('message event kit: ', event.data.type);
-
+        if (event.data.type) {
+          console.log('[kit] message event type: ', event.data.type);
+        }
         if (event.data.type == 'letsGo') {
           (async () => {
             const result = await paymentRequest.canMakePayment();
-            console.log('result: ', result);
-
+            console.log('[kit] result: ', result);
             if (result && result.applePay) {
               frame.contentWindow?.postMessage(
                 {
@@ -87,10 +86,14 @@ export const useNoRampModal = (config: NoRampConfig) => {
                 },
                 '*'
               );
-            } else {
-              console.error('Cannot make payment', result);
-              outputElement.innerHTML =
-                '<strong>Error:</strong> <code>paymentRequest.canMakePayment()</code> indicated Apple Pay cannot be used.  Try opening this page in Safari and make sure you have a valid payment card in your Apple Wallet.';
+
+              paymentRequest.update({
+                total: {
+                  label: 'NoRamp',
+                  amount: event.data.amount,
+                  pending: false,
+                },
+              });
             }
           })();
         }
@@ -105,11 +108,11 @@ export const useNoRampModal = (config: NoRampConfig) => {
       });
 
       paymentRequest.on('paymentmethod', async (event) => {
-        outputElement.innerHTML =
-          '<p>Got a Payment Method: <code>' +
-          event.paymentMethod.id +
-          '</code></p><p>Sending it to the frame!</p>';
-
+        console.log(
+          '[kit] Got a Payment Method: ',
+          event.paymentMethod.id,
+          frame.contentWindow
+        );
         paymentResponse = event;
 
         frame.contentWindow?.postMessage({
