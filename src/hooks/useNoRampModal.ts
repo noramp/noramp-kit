@@ -44,8 +44,6 @@ export const useNoRampModal = (config: NoRampConfig) => {
     window.addEventListener('message', eventHandler, false);
 
     async function applePay() {
-      const targetOrigin = 'https://checkout-testnet.noramp.io';
-
       const frame = iframeRef.current;
 
       const outputElement = document.querySelector('#output');
@@ -55,7 +53,7 @@ export const useNoRampModal = (config: NoRampConfig) => {
       }
 
       const stripe = await loadStripe(
-        'pk_test_UVG6dCspo15ZnN2v3OnUPY7900cfAiVOpy'
+        'pk_test_51Kvq6SIkFYA0Bt9COhStV61cQKyfUE8QoJyTSnDi2s0a6OsKiMLTqN0Cm8q1kjqIXzMpB8ZWF60vWIQFIjT3JWWm00IpaUbajk'
       );
       if (!stripe) {
         return;
@@ -68,7 +66,7 @@ export const useNoRampModal = (config: NoRampConfig) => {
         currency: 'usd',
         total: {
           label: 'Apple Pay in a Frame!',
-          amount: 0,
+          amount: 1099,
           pending: true,
         },
         requestPayerName: true,
@@ -91,7 +89,7 @@ export const useNoRampModal = (config: NoRampConfig) => {
                 '*'
               );
             } else {
-              console.error('Cannot make payment');
+              console.error('Cannot make payment', result);
               outputElement.innerHTML =
                 '<strong>Error:</strong> <code>paymentRequest.canMakePayment()</code> indicated Apple Pay cannot be used.  Try opening this page in Safari and make sure you have a valid payment card in your Apple Wallet.';
             }
@@ -130,11 +128,11 @@ export const useNoRampModal = (config: NoRampConfig) => {
   }, [config, eventHandler]);
 
   const getBaseUrl = useCallback((testnet: boolean) => {
-    const baseUrl = testnet
-      ? 'https://checkout-testnet.noramp.io'
-      : 'https://checkout.noramp.io';
+    // const baseUrl = testnet
+    //   ? 'https://checkout-testnet.noramp.io'
+    //   : 'https://checkout.noramp.io';
 
-    // const baseUrl = 'http://localhost:4000';
+    const baseUrl = 'http://localhost:4000';
 
     return `${baseUrl}`;
   }, []);
