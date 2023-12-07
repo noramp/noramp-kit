@@ -65,9 +65,8 @@ export const useNoRampModal = (config: NoRampConfig) => {
         country: 'US',
         currency: 'usd',
         total: {
-          label: 'Apple Pay in a Frame!',
-          amount: 1099,
-          pending: true,
+          label: 'NoRamp',
+          amount: 100,
         },
         requestPayerName: true,
         requestPayerEmail: true,
