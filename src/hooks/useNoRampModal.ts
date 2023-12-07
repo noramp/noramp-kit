@@ -179,7 +179,7 @@ export const useNoRampModal = (config: NoRampConfig) => {
       iframe.allow = 'clipboard-write';
       iframe.style.cssText =
         'position: fixed; inset: 0px; z-index: 2147483647; border-width: 0px; overflow: hidden auto; top: 0, left: 0, width: 100%, height: 100%';
-      iframe.style.display = 'block';
+      iframe.style.display = 'flex';
       document.body.appendChild(iframe);
       iframeRef.current = iframe;
     },
