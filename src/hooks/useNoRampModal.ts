@@ -38,6 +38,15 @@ export const useNoRampModal = (config: NoRampConfig) => {
     },
     [config]
   );
+
+  useEffect(() => {
+    window.addEventListener('message', eventHandler, false);
+
+    return () => {
+      window.removeEventListener('message', eventHandler, false);
+    };
+  }, [config, eventHandler]);
+
   const getBaseUrl = useCallback((testnet: boolean) => {
     const baseUrl = testnet
       ? 'https://checkout-testnet.noramp.io'
