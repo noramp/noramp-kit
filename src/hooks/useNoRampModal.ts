@@ -55,7 +55,7 @@ export const useNoRampModal = (config: NoRampConfig) => {
       }
 
       const stripe = await loadStripe(
-        'pk_test_51Kvq6SIkFYA0Bt9COhStV61cQKyfUE8QoJyTSnDi2s0a6OsKiMLTqN0Cm8q1kjqIXzMpB8ZWF60vWIQFIjT3JWWm00IpaUbajk'
+        'pk_test_UVG6dCspo15ZnN2v3OnUPY7900cfAiVOpy'
       );
       if (!stripe) {
         return;
@@ -76,18 +76,19 @@ export const useNoRampModal = (config: NoRampConfig) => {
       });
 
       window.addEventListener('message', (event) => {
-        console.log('message event: ', event.data.type);
+        console.log('message event kit: ', event.data.type);
 
         if (event.data.type == 'letsGo') {
           (async () => {
             const result = await paymentRequest.canMakePayment();
+            console.log('result: ', result);
 
             if (result && result.applePay) {
               frame.contentWindow?.postMessage(
                 {
                   type: 'canMakePayment',
                 },
-                targetOrigin
+                '*'
               );
             } else {
               console.error('Cannot make payment');
