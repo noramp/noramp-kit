@@ -28,6 +28,7 @@ const Checkout = () => {
           <div className="flex">
             <NoRampOneClick
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
+              // priceId="price_1EJSx7ToLIsWmMQB6WLGmR"
               testnet
               onSuccess={handleSuccess}
               theme={theme}
@@ -90,6 +91,8 @@ const Checkout = () => {
             />
           </div>
         </div>
+
+        <div id="output"></div>
 
         <div className="flex flex-col justify-start w-full max-w-4xl mt-12">
           <h3 className="mb-2 text-lg font-bold">Usage</h3>

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { NoRampConfig } from '../types';
+import { loadStripe } from '@stripe/stripe-js';
 
 export const useNoRampModal = (config: NoRampConfig) => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
@@ -42,6 +43,86 @@ export const useNoRampModal = (config: NoRampConfig) => {
   useEffect(() => {
     window.addEventListener('message', eventHandler, false);
 
+    async function applePay() {
+      const targetOrigin = 'https://checkout-testnet.noramp.io';
+
+      const frame = iframeRef.current;
+
+      const outputElement = document.querySelector('#output');
+
+      if (!frame || !outputElement) {
+        return;
+      }
+
+      const stripe = await loadStripe(
+        'pk_test_51Kvq6SIkFYA0Bt9COhStV61cQKyfUE8QoJyTSnDi2s0a6OsKiMLTqN0Cm8q1kjqIXzMpB8ZWF60vWIQFIjT3JWWm00IpaUbajk'
+      );
+      if (!stripe) {
+        return;
+      }
+
+      let paymentResponse: any;
+
+      const paymentRequest = stripe.paymentRequest({
+        country: 'US',
+        currency: 'usd',
+        total: {
+          label: 'Apple Pay in a Frame!',
+          amount: 0,
+          pending: true,
+        },
+        requestPayerName: true,
+        requestPayerEmail: true,
+      });
+
+      window.addEventListener('message', (event) => {
+        console.log('message event: ', event.data.type);
+
+        if (event.data.type == 'letsGo') {
+          (async () => {
+            const result = await paymentRequest.canMakePayment();
+
+            if (result && result.applePay) {
+              frame.contentWindow?.postMessage(
+                {
+                  type: 'canMakePayment',
+                },
+                targetOrigin
+              );
+            } else {
+              console.error('Cannot make payment');
+              outputElement.innerHTML =
+                '<strong>Error:</strong> <code>paymentRequest.canMakePayment()</code> indicated Apple Pay cannot be used.  Try opening this page in Safari and make sure you have a valid payment card in your Apple Wallet.';
+            }
+          })();
+        }
+
+        if (event.data.type == 'requestPayment') {
+          paymentRequest.show();
+        }
+
+        if (event.data.type == 'completePaymentRequest') {
+          paymentResponse.complete(event.data.status);
+        }
+      });
+
+      paymentRequest.on('paymentmethod', async (event) => {
+        outputElement.innerHTML =
+          '<p>Got a Payment Method: <code>' +
+          event.paymentMethod.id +
+          '</code></p><p>Sending it to the frame!</p>';
+
+        paymentResponse = event;
+
+        frame.contentWindow?.postMessage({
+          messageType: 'paymentMethod',
+          paymentMethod: event.paymentMethod.id,
+        });
+      });
+    }
+
+    applePay();
+
     return () => {
       window.removeEventListener('message', eventHandler, false);
     };
@@ -51,6 +132,8 @@ export const useNoRampModal = (config: NoRampConfig) => {
     const baseUrl = testnet
       ? 'https://checkout-testnet.noramp.io'
       : 'https://checkout.noramp.io';
+
+    // const baseUrl = 'http://localhost:4000';
 
     return `${baseUrl}`;
   }, []);
