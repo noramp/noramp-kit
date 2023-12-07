@@ -115,10 +115,13 @@ export const useNoRampModal = (config: NoRampConfig) => {
         );
         paymentResponse = event;
 
-        frame.contentWindow?.postMessage({
-          messageType: 'paymentMethod',
-          paymentMethod: event.paymentMethod.id,
-        });
+        frame.contentWindow?.postMessage(
+          {
+            messageType: 'paymentMethod',
+            paymentMethod: event.paymentMethod.id,
+          },
+          '*'
+        );
       });
     }
 
