@@ -49,7 +49,7 @@ export const useNoRampModal = (config: NoRampConfig) => {
 
   const getSrc = useCallback(
     (config: NoRampConfig, testnet: boolean) => {
-      const { priceId, theme, user } = config;
+      const { priceId, theme, user, userCanEditWalletAddress } = config;
 
       const baseUrl = getBaseUrl(testnet);
 
@@ -61,6 +61,12 @@ export const useNoRampModal = (config: NoRampConfig) => {
 
       if (user) {
         queryParams.push(`user=${user}`);
+      }
+
+      if (userCanEditWalletAddress) {
+        queryParams.push(
+          `userCanEditWalletAddress=${userCanEditWalletAddress}`
+        );
       }
 
       const queryString =
