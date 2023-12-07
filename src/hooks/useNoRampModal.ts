@@ -87,13 +87,13 @@ export const useNoRampModal = (config: NoRampConfig) => {
                 '*'
               );
 
-              paymentRequest.update({
-                total: {
-                  label: 'NoRamp',
-                  amount: event.data.amount,
-                  pending: false,
-                },
-              });
+              // paymentRequest.update({
+              //   total: {
+              //     label: 'NoRamp',
+              //     amount: event.data.amount,
+              //     pending: false,
+              //   },
+              // });
             }
           })();
         }
