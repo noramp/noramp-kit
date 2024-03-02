@@ -3,13 +3,13 @@ import './styles.css';
 import React from 'react';
 
 import { useCallback } from 'react';
-import LoadingIcon from '../../components/LoadingIcon';
-import NoRampLogo from '../../components/NoRampLogo';
+import LoadingIcon from '../LoadingIcon';
+import NoRampLogo from '../NoRampLogo';
 import { TYPE_LABELS } from '../../constants';
 import useNoRampModal from '../../hooks/useNoRampModal';
 import { NoRampConfig } from '../../types';
 
-export const NoRampOneClick = ({
+export const NoRampCheckout = ({
   priceId,
   testnet = false,
   type = 'buy',

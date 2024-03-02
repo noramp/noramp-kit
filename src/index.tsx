@@ -1,4 +1,4 @@
-export { NoRampOneClick } from './components/noramp-one-click/one-click';
+export { NoRampCheckout } from './components/noramp-checkout/checkout';
 export { NoRampPayout } from './components/noramp-payout/payout';
 export { NoRampKyc } from './components/noramp-kyc/kyc';
 export { NoRampCashout } from './components/noramp-cashout/cashout';

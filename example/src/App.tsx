@@ -1,4 +1,4 @@
-import { NoRampOneClick } from '../../src';
+import { NoRampCheckout } from '../../src';
 
 const App = () => {
   const handleSuccess = (data: any) => {
@@ -9,7 +9,7 @@ const App = () => {
     <div className="main">
       <div className="column dark">
         <p className="title">Light theme:</p>
-        <NoRampOneClick
+        <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
           testnet
           onSuccess={handleSuccess}
@@ -18,7 +18,7 @@ const App = () => {
           buttonTheme="light"
         />
 
-        <NoRampOneClick
+        <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
           testnet
           onSuccess={handleSuccess}
@@ -27,7 +27,7 @@ const App = () => {
           buttonTheme="light"
         />
 
-        <NoRampOneClick
+        <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
           testnet
           onSuccess={handleSuccess}
@@ -35,7 +35,7 @@ const App = () => {
           type="donate"
           buttonTheme="light"
         />
-        <NoRampOneClick
+        <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
           testnet
           onSuccess={handleSuccess}
@@ -47,7 +47,7 @@ const App = () => {
 
       <div className="column light">
         <p className="title">Dark theme:</p>
-        <NoRampOneClick
+        <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
           testnet
           onSuccess={handleSuccess}
@@ -55,7 +55,7 @@ const App = () => {
           buttonTheme="dark"
         />
 
-        <NoRampOneClick
+        <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
           testnet
           onSuccess={handleSuccess}
@@ -64,7 +64,7 @@ const App = () => {
           type="checkout"
         />
 
-        <NoRampOneClick
+        <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
           testnet
           onSuccess={handleSuccess}
@@ -73,7 +73,7 @@ const App = () => {
           type="continue"
         />
 
-        <NoRampOneClick
+        <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
           testnet
           onSuccess={handleSuccess}

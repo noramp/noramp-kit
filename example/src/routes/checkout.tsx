@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NoRampOneClick } from '../../../src';
+import { NoRampCheckout } from '../../../src';
 import ThemeSwitcher from '../components/ui/theme-switcher/theme-switcher';
 
 const Checkout = () => {
@@ -26,7 +26,7 @@ const Checkout = () => {
 
         <div className="grid w-full max-w-4xl grid-cols-1 gap-4 overflow-auto lg:grid-cols-2 ">
           <div className="flex">
-            <NoRampOneClick
+            <NoRampCheckout
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
               // priceId="price_1EJSx7ToLIsWmMQB6WLGmR"
               testnet
@@ -39,7 +39,7 @@ const Checkout = () => {
           </div>
 
           <div className="flex">
-            <NoRampOneClick
+            <NoRampCheckout
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
               testnet
               onSuccess={handleSuccess}
@@ -50,7 +50,7 @@ const Checkout = () => {
           </div>
 
           <div className="flex">
-            <NoRampOneClick
+            <NoRampCheckout
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
               testnet
               onSuccess={handleSuccess}
@@ -61,7 +61,7 @@ const Checkout = () => {
           </div>
 
           <div className="flex">
-            <NoRampOneClick
+            <NoRampCheckout
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
               testnet
               onSuccess={handleSuccess}
@@ -71,7 +71,7 @@ const Checkout = () => {
             />
           </div>
           <div className="flex">
-            <NoRampOneClick
+            <NoRampCheckout
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
               testnet
               onSuccess={handleSuccess}
@@ -81,7 +81,7 @@ const Checkout = () => {
             />
           </div>
           <div className="flex">
-            <NoRampOneClick
+            <NoRampCheckout
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
               testnet
               onSuccess={handleSuccess}
@@ -107,9 +107,9 @@ const Checkout = () => {
             in order to generate and create a PRICE_ID for your NFT sales.
           </p>
           <pre className="p-2 mb-4 text-white bg-gray-800 rounded">
-            {`import { NoRampOneClick } from 'norampkit';
+            {`import { NoRampCheckout } from 'norampkit';
 
-<NoRampOneClick 
+<NoRampCheckout 
   priceId="PRICE_ID" 
   theme={"light" | "dark"} 
   testnet
