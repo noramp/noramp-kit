@@ -46,13 +46,6 @@ export default function Home() {
           <Link to="/kyc" className="font-bold text-blue-500 hover:underline">
             KYC Widget
           </Link>
-          <br />
-          <Link
-            to="/payout"
-            className="font-bold text-blue-500 hover:underline"
-          >
-            Payout Widget
-          </Link>
         </p>
 
         <h2 className="mb-2 text-xl font-bold">Documentation</h2>
