@@ -1,17 +1,14 @@
+import { NextUIProvider } from '@nextui-org/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import { RouterProvider, createHashRouter } from 'react-router-dom';
-import Home from './routes/home';
+import Layout from './components/layout';
+import './index.css';
+import Cashout from './routes/cashout';
 import Checkout from './routes/checkout';
 import Connect from './routes/connect';
-import Marketplace from './routes/kyc';
-import Header from './components/header';
-import Layout from './components/layout';
-import Kyc from './routes/kyc';
+import Home from './routes/home';
 import Payout from './routes/payout';
-import { NextUIProvider } from '@nextui-org/react';
-import Cashout from './routes/cashout';
 
 const router = createHashRouter([
   {
@@ -43,14 +40,6 @@ const router = createHashRouter([
     element: (
       <Layout>
         <Cashout />
-      </Layout>
-    ),
-  },
-  {
-    path: '/kyc',
-    element: (
-      <Layout>
-        <Kyc />
       </Layout>
     ),
   },

@@ -21,7 +21,11 @@ const Payout = () => {
         </div>
 
         <div className="w-full max-w-4xl overflow-auto ">
-          <NoRampPayout token="preview" testnet theme={theme} />
+          <NoRampPayout
+            token="098c589add3ece84398bba9caa773fbb97de531779a24a5d547c3dceee61edd7"
+            testnet
+            theme={theme}
+          />
         </div>
 
         <div className="flex flex-col justify-start w-full max-w-4xl mt-12">
@@ -29,15 +33,15 @@ const Payout = () => {
           <p className="mb-4">
             Sign up on{' '}
             <a
-              href="https://app.noramp.io"
+              href="https://dash.noramp.io"
               className="text-blue-500 hover:underline"
             >
-              app.noramp.io
+              dash.noramp.io
             </a>{' '}
             , create a Marketplace App and register sellers in order to get the
             token.
           </p>
-          <pre className="p-2 mb-4 overflow-auto text-white bg-gray-800 rounded">
+          <pre className="p-2 mb-4 text-white bg-gray-800 rounded">
             {`import { NoRampPayout } from 'norampkit';
 
 <NoRampPayout 

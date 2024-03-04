@@ -1,20 +1,18 @@
-import React from 'react';
-
 import './styles.css';
 
-import { getNoRampAppBaseUrl } from '../../utils/noramp-app';
 import { NoRampPayoutProps } from '../../types';
+import { getNoRampPayoutBaseUrl } from '../../utils/noramp-app';
 
 export const NoRampPayout = ({
   token,
   testnet = false,
   theme = 'dark',
-  height = '400',
+  height = '440',
   width = '100%',
 }: NoRampPayoutProps) => {
-  const baseUrl = getNoRampAppBaseUrl(testnet);
+  const baseUrl = getNoRampPayoutBaseUrl(testnet);
 
-  let src = `${baseUrl}/embed/payout/${token}?theme=${theme}`;
+  let src = `${baseUrl}/${token}?theme=${theme}`;
 
   const isPreview = token === 'preview';
 

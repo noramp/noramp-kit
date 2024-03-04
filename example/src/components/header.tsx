@@ -27,10 +27,6 @@ const Header = () => {
       href: '/kyc',
     },
     {
-      title: 'Payout',
-      href: '/payout',
-    },
-    {
       title: 'Connect',
       href: '/connect',
     },
@@ -71,13 +67,9 @@ const Header = () => {
           className="text-gray-400 hover:text-gray-200"
           isActive={location.pathname === '/kyc'}
         >
-          <Link to="/kyc">KYC</Link>
+          <Link to="/payout">Payout</Link>
         </NavbarItem>
-        <NavbarItem isActive={location.pathname === '/payout'}>
-          <Link className="text-gray-400 hover:text-gray-200" to="/payout">
-            Payout
-          </Link>
-        </NavbarItem>
+
         <NavbarItem isActive={location.pathname === '/connect'}>
           <Link className="text-gray-400 hover:text-gray-200" to="/connect">
             Connect

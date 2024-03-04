@@ -29,14 +29,6 @@ export type NoRampConfig = {
   userCanEditWalletAddress?: string;
 };
 
-export type NoRampKycProps = {
-  token: string;
-  testnet?: boolean;
-  theme?: 'light' | 'dark' | null;
-  height?: string;
-  width?: string;
-};
-
 export type NoRampCashoutProps = {
   testnet?: boolean;
   theme?: 'light' | 'dark' | null;

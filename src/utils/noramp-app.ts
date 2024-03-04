@@ -5,3 +5,9 @@ export function getNoRampAppBaseUrl(testnet: boolean): string {
 
   return baseUrl;
 }
+
+export function getNoRampPayoutBaseUrl(testnet: boolean): string {
+  const baseUrl = testnet ? 'https://kyc.noramp.dev' : 'https://kyc.noramp.io';
+
+  return baseUrl;
+}
