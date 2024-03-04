@@ -1,4 +1,5 @@
 import './styles.css';
+import React from 'react';
 
 import { NoRampPayoutProps } from '../../types';
 import { getNoRampPayoutBaseUrl } from '../../utils/noramp-app';
