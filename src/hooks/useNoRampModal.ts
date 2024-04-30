@@ -133,10 +133,7 @@ export const useNoRampModal = (config: NoRampConfig) => {
   }, [config, eventHandler]);
 
   const getBaseUrl = useCallback((testnet: boolean) => {
-    const baseUrl = testnet
-      ? 'https://checkout-testnet.noramp.io'
-      : 'https://checkout.noramp.io';
-
+    const baseUrl = 'https://checkout.noramp.io';
     // const baseUrl = 'http://localhost:4000';
 
     return `${baseUrl}`;
