@@ -132,7 +132,7 @@ export const useNoRampModal = (config: NoRampConfig) => {
     };
   }, [config, eventHandler]);
 
-  const getBaseUrl = useCallback((testnet: boolean) => {
+  const getBaseUrl = useCallback(() => {
     const baseUrl = 'https://checkout.noramp.io';
     // const baseUrl = 'http://localhost:4000';
 
@@ -140,10 +140,10 @@ export const useNoRampModal = (config: NoRampConfig) => {
   }, []);
 
   const getSrc = useCallback(
-    (config: NoRampConfig, testnet: boolean) => {
+    (config: NoRampConfig) => {
       const { priceId, theme, user, userCanEditWalletAddress } = config;
 
-      const baseUrl = getBaseUrl(testnet);
+      const baseUrl = getBaseUrl();
 
       const queryParams: string[] = [];
 
@@ -194,8 +194,7 @@ export const useNoRampModal = (config: NoRampConfig) => {
     if (iframeRef?.current) {
       iframeRef.current.style.display = 'block';
     } else {
-      const { testnet = false } = config;
-      const src = getSrc(config, testnet);
+      const src = getSrc(config);
       insertIframe(src);
     }
     setIsOpen(true);

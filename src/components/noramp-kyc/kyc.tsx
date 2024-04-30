@@ -6,12 +6,11 @@ import { NoRampKycProps } from '../../types';
 
 export const NoRampKyc = ({
   token,
-  testnet = false,
   theme = 'dark',
   height = '440',
   width = '100%',
 }: NoRampKycProps) => {
-  const baseUrl = getNoRampAppBaseUrl(testnet);
+  const baseUrl = getNoRampAppBaseUrl();
 
   let src = `${baseUrl}/embed/kyc/${token}?theme=${theme}`;
 

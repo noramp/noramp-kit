@@ -21,7 +21,7 @@ const Payout = () => {
         </div>
 
         <div className="w-full max-w-4xl overflow-auto ">
-          <NoRampPayout token="preview" testnet theme={theme} />
+          <NoRampPayout token="preview" theme={theme} />
         </div>
 
         <div className="flex flex-col justify-start w-full max-w-4xl mt-12">
@@ -43,8 +43,7 @@ const Payout = () => {
 <NoRampPayout 
   token="TOKEN" 
   theme={"light" | "dark"} 
-  testnet 
-/>`}
+ />`}
           </pre>
         </div>
       </div>

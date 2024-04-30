@@ -11,7 +11,6 @@ const App = () => {
         <p className="title">Light theme:</p>
         <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-          testnet
           onSuccess={handleSuccess}
           theme="light"
           type="buy"
@@ -20,7 +19,6 @@ const App = () => {
 
         <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-          testnet
           onSuccess={handleSuccess}
           theme="light"
           type="book"
@@ -29,7 +27,6 @@ const App = () => {
 
         <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-          testnet
           onSuccess={handleSuccess}
           theme="light"
           type="donate"
@@ -37,7 +34,6 @@ const App = () => {
         />
         <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-          testnet
           onSuccess={handleSuccess}
           theme="light"
           type="plain"
@@ -49,7 +45,6 @@ const App = () => {
         <p className="title">Dark theme:</p>
         <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-          testnet
           onSuccess={handleSuccess}
           theme="dark"
           buttonTheme="dark"
@@ -57,7 +52,6 @@ const App = () => {
 
         <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-          testnet
           onSuccess={handleSuccess}
           theme="dark"
           buttonTheme="dark"
@@ -66,7 +60,6 @@ const App = () => {
 
         <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-          testnet
           onSuccess={handleSuccess}
           theme="dark"
           buttonTheme="dark"
@@ -75,7 +68,6 @@ const App = () => {
 
         <NoRampCheckout
           priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-          testnet
           onSuccess={handleSuccess}
           theme="dark"
           type="plain"

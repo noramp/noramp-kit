@@ -5,7 +5,7 @@ import { NoRampCheckout } from '../src';
 describe('it', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<NoRampCheckout priceId="" testnet />, div);
+    ReactDOM.render(<NoRampCheckout priceId="" />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });
