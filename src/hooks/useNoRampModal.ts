@@ -204,6 +204,10 @@ export const useNoRampModal = (config: NoRampConfig) => {
     if (iframeRef.current) {
       iframeRef.current.style.display = 'none';
 
+      const src = getSrc(config);
+
+      iframeRef.current.src = `${src}?reload=${Date.now()}`;
+
       setIsOpen(false);
     }
   };
