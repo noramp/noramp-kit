@@ -27,7 +27,7 @@ const Checkout = () => {
         <div className="grid w-full max-w-4xl grid-cols-1 gap-4 overflow-auto lg:grid-cols-2 ">
           <div className="flex">
             <NoRampCheckout
-              priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
+              priceId="pi_0a0CHdzVCUSwvZmvbQ1gjm"
               // priceId="price_1EJSx7ToLIsWmMQB6WLGmR"
               onSuccess={handleSuccess}
               theme={theme}
@@ -39,7 +39,7 @@ const Checkout = () => {
 
           <div className="flex">
             <NoRampCheckout
-              priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
+              priceId="pi_0a0CHdzVCUSwvZmvbQ1gjm"
               onSuccess={handleSuccess}
               theme={theme}
               type="book"
@@ -49,7 +49,7 @@ const Checkout = () => {
 
           <div className="flex">
             <NoRampCheckout
-              priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
+              priceId="pi_0a0CHdzVCUSwvZmvbQ1gjm"
               onSuccess={handleSuccess}
               theme={theme}
               type="donate"
@@ -59,7 +59,7 @@ const Checkout = () => {
 
           <div className="flex">
             <NoRampCheckout
-              priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
+              priceId="pi_0a0CHdzVCUSwvZmvbQ1gjm"
               onSuccess={handleSuccess}
               theme={theme}
               buttonTheme={theme}
@@ -68,7 +68,7 @@ const Checkout = () => {
           </div>
           <div className="flex">
             <NoRampCheckout
-              priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
+              priceId="pi_0a0CHdzVCUSwvZmvbQ1gjm"
               onSuccess={handleSuccess}
               theme={theme}
               buttonTheme={theme}
@@ -77,7 +77,7 @@ const Checkout = () => {
           </div>
           <div className="flex">
             <NoRampCheckout
-              priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
+              priceId="pi_0a0CHdzVCUSwvZmvbQ1gjm"
               onSuccess={handleSuccess}
               theme={theme}
               type="plain"
