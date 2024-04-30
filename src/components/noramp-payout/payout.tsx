@@ -7,12 +7,11 @@ import { NoRampPayoutProps } from '../../types';
 
 export const NoRampPayout = ({
   token,
-  testnet = false,
   theme = 'dark',
   height = '400',
   width = '100%',
 }: NoRampPayoutProps) => {
-  const baseUrl = getNoRampAppBaseUrl(testnet);
+  const baseUrl = getNoRampAppBaseUrl();
 
   let src = `${baseUrl}/embed/payout/${token}?theme=${theme}`;
 

@@ -17,7 +17,6 @@ export type ButtonType =
 
 export type NoRampConfig = {
   priceId: string;
-  testnet?: boolean;
   theme?: 'light' | 'dark' | null;
   buttonTheme?: 'light' | 'dark' | null;
   type?: ButtonType;
@@ -31,21 +30,18 @@ export type NoRampConfig = {
 
 export type NoRampKycProps = {
   token: string;
-  testnet?: boolean;
   theme?: 'light' | 'dark' | null;
   height?: string;
   width?: string;
 };
 
 export type NoRampCashoutProps = {
-  testnet?: boolean;
   theme?: 'light' | 'dark' | null;
   height?: string;
   width?: string;
 };
 
 export type NoRampConnectProps = {
-  testnet?: boolean;
   theme?: 'light' | 'dark' | null;
   height?: string;
   width?: string;
@@ -53,7 +49,6 @@ export type NoRampConnectProps = {
 
 export type NoRampPayoutProps = {
   token: string;
-  testnet?: boolean;
   theme?: 'light' | 'dark' | null;
   height?: string;
   width?: string;

@@ -21,7 +21,7 @@ const Kyc = () => {
         </div>
 
         <div className="w-full max-w-4xl overflow-auto ">
-          <NoRampKyc token="preview" testnet theme={theme} />
+          <NoRampKyc token="preview" theme={theme} />
         </div>
 
         <div className="flex flex-col justify-start w-full max-w-4xl mt-12">
@@ -43,7 +43,6 @@ const Kyc = () => {
 <NoRampKyc 
   token="TOKEN" 
   theme={"light" | "dark"} 
-  testnet 
 />`}
           </pre>
         </div>

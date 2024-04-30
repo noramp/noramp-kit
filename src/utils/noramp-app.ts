@@ -1,7 +1,5 @@
-export function getNoRampAppBaseUrl(testnet: boolean): string {
-  const baseUrl = testnet
-    ? 'https://testnet.noramp.io'
-    : 'https://dashboard.noramp.io';
+export function getNoRampAppBaseUrl(): string {
+  const baseUrl = 'https://dash.noramp.io';
 
   return baseUrl;
 }

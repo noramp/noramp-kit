@@ -11,14 +11,12 @@ import { NoRampConfig } from '../../types';
 
 export const NoRampCheckout = ({
   priceId,
-  testnet = false,
   type = 'buy',
   buttonTheme = 'dark',
   ...config
 }: NoRampConfig) => {
   const { open, isOpen } = useNoRampModal({
     priceId,
-    testnet,
     ...config,
   });
 

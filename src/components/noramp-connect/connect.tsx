@@ -4,7 +4,6 @@ import { NoRampConnectProps } from '../../types';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export const NoRampConnect = ({
-  testnet = false,
   theme = 'dark',
   ...config
 }: NoRampConnectProps) => {

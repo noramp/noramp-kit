@@ -29,7 +29,6 @@ const Checkout = () => {
             <NoRampCheckout
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
               // priceId="price_1EJSx7ToLIsWmMQB6WLGmR"
-              testnet
               onSuccess={handleSuccess}
               theme={theme}
               type="buy"
@@ -41,7 +40,6 @@ const Checkout = () => {
           <div className="flex">
             <NoRampCheckout
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-              testnet
               onSuccess={handleSuccess}
               theme={theme}
               type="book"
@@ -52,7 +50,6 @@ const Checkout = () => {
           <div className="flex">
             <NoRampCheckout
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-              testnet
               onSuccess={handleSuccess}
               theme={theme}
               type="donate"
@@ -63,7 +60,6 @@ const Checkout = () => {
           <div className="flex">
             <NoRampCheckout
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-              testnet
               onSuccess={handleSuccess}
               theme={theme}
               buttonTheme={theme}
@@ -73,7 +69,6 @@ const Checkout = () => {
           <div className="flex">
             <NoRampCheckout
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-              testnet
               onSuccess={handleSuccess}
               theme={theme}
               buttonTheme={theme}
@@ -83,7 +78,6 @@ const Checkout = () => {
           <div className="flex">
             <NoRampCheckout
               priceId="price_3O7ZpGp3BmILQOQhlzk2Pg"
-              testnet
               onSuccess={handleSuccess}
               theme={theme}
               type="plain"
@@ -112,7 +106,6 @@ const Checkout = () => {
 <NoRampCheckout 
   priceId="PRICE_ID" 
   theme={"light" | "dark"} 
-  testnet
   user="gavin@hooli.xyz"
 />`}
           </pre>

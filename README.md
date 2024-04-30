@@ -45,7 +45,7 @@ Sign up on [app.noramp.io](https://app.noramp.io) in order to generate and creat
 ```javascript
 import { NoRampCheckout } from 'norampkit';
 
-<NoRampCheckout priceId="PRICE_ID" testnet />;
+<NoRampCheckout priceId="PRICE_ID" />;
 ```
 
 ## License
