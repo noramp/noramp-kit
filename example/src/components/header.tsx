@@ -46,7 +46,7 @@ const Header = () => {
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       isMenuOpen={isMenuOpen}
-      className="bg-[#121212] text-white border-b border-gray-200/20"
+      className="bg-[#00000] text-gray border-b border-gray-200/20"
     >
       <NavbarContent>
         <NavbarMenuToggle
@@ -63,28 +63,28 @@ const Header = () => {
 
       <NavbarContent className="hidden gap-10 sm:flex" justify="center">
         <NavbarItem isActive={location.pathname === '/checkout'}>
-          <Link className="text-gray-400 hover:text-gray-200" to="/checkout">
+          <Link className="text-gray-600 hover:text-gray-900" to="/checkout">
             Checkout
           </Link>
         </NavbarItem>
         <NavbarItem
-          className="text-gray-400 hover:text-gray-200"
+          className="text-gray-600 hover:text-gray-900"
           isActive={location.pathname === '/kyc'}
         >
           <Link to="/kyc">KYC</Link>
         </NavbarItem>
         <NavbarItem isActive={location.pathname === '/payout'}>
-          <Link className="text-gray-400 hover:text-gray-200" to="/payout">
+          <Link className="text-gray-600 hover:text-gray-900" to="/payout">
             Payout
           </Link>
         </NavbarItem>
         <NavbarItem isActive={location.pathname === '/connect'}>
-          <Link className="text-gray-400 hover:text-gray-200" to="/connect">
+          <Link className="text-gray-600 hover:text-gray-900" to="/connect">
             Connect
           </Link>
         </NavbarItem>
         <NavbarItem isActive={location.pathname === '/cashout'}>
-          <Link className="text-gray-400 hover:text-gray-200" to="/cashout">
+          <Link className="text-gray-600 hover:text-gray-900" to="/cashout">
             Cashout
           </Link>
         </NavbarItem>
@@ -98,11 +98,11 @@ const Header = () => {
             href="https://dashboard.noramp.io/?utm_source=norampkit"
             variant="solid"
           >
-            Get Stated
+            Get Started
           </Button>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu hidden={!isMenuOpen} className="bg-[#111111] text-slate-100">
+      <NavbarMenu hidden={!isMenuOpen} className="bg-[#00000] text-gray">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`} className="bg-transparent">
             <Link
