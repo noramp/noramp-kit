@@ -7,13 +7,15 @@ export default function Home() {
 
   return (
     <div className="container mx-auto">
-      <div className="p-6 ">
+      <div className="p-6 xl:mx-28">
         <h1 className="mb-4 text-3xl font-bold">NoRampKit</h1>
-        <a href="https://noramp.io" className="flex justify-center ">
+        <a href="https://noramp.io" className="flex justify-center">
           <img
             alt="norampkit"
-            src="https://i.imgur.com/0cl3hkv.png"
-            className="mb-6 max-h-80"
+            src="../public/norampkit.png"
+            height={518}
+            width={922}
+            className="mb-6 rounded-xl"
           />
         </a>
 

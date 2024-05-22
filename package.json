@@ -81,6 +81,7 @@
     "@types/lodash.merge": "^4.6.9",
     "lodash.merge": "^4.6.2",
     "viem": "^1.19.9",
-    "wagmi": "^1.4.7"
+    "wagmi": "^1.4.7",
+    "yarn": "^1.22.22"
   }
 }
