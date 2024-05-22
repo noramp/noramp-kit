@@ -12,7 +12,7 @@ export default function Home() {
         <a href="https://noramp.io" className="flex justify-center">
           <img
             alt="norampkit"
-            src="../public/norampkit.png"
+            src="/norampkit.png"
             height={518}
             width={922}
             className="mb-6 rounded-xl"
