@@ -38,6 +38,10 @@ const Header = () => {
       title: 'Cashout',
       href: '/cashout',
     },
+    {
+      title: 'USDC',
+      href: '/usdc',
+    },
   ];
 
   const location = useLocation();
@@ -86,6 +90,11 @@ const Header = () => {
         <NavbarItem isActive={location.pathname === '/cashout'}>
           <Link className="text-gray-600 hover:text-gray-900" to="/cashout">
             Cashout
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive={location.pathname === '/usdc'}>
+          <Link className="text-gray-600 hover:text-gray-900" to="/usdc">
+            USDC
           </Link>
         </NavbarItem>
       </NavbarContent>

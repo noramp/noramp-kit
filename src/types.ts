@@ -28,6 +28,12 @@ export type NoRampConfig = {
   userCanEditWalletAddress?: string;
 };
 
+export type NoRampUSDCProps = {
+  theme?: 'light' | 'dark' | null;
+  height?: string;
+  width?: string;
+};
+
 export type NoRampKycProps = {
   token: string;
   theme?: 'light' | 'dark' | null;
