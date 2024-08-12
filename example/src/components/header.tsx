@@ -39,8 +39,8 @@ const Header = () => {
       href: '/cashout',
     },
     {
-      title: 'USDC',
-      href: '/usdc',
+      title: 'Wands',
+      href: '/wands',
     },
   ];
 
@@ -92,9 +92,9 @@ const Header = () => {
             Cashout
           </Link>
         </NavbarItem>
-        <NavbarItem isActive={location.pathname === '/usdc'}>
-          <Link className="text-gray-600 hover:text-gray-900" to="/usdc">
-            USDC
+        <NavbarItem isActive={location.pathname === '/wands'}>
+          <Link className="text-gray-600 hover:text-gray-900" to="/wands">
+            Wands
           </Link>
         </NavbarItem>
       </NavbarContent>

@@ -1,11 +1,11 @@
 import React from 'react';
 import NoRampLogo from '../NoRampLogo';
-import { NoRampUSDCProps } from '../../types';
+import { NoRampWandsProps } from '../../types';
 
 export const NoRampUSDC = ({
   height = '440',
   width = '440',
-}: NoRampUSDCProps) => {
+}: NoRampWandsProps) => {
   let src = `https://usdc.noramp.io/swap`;
 
   const [openWidget, setOpenWidget] = React.useState(false);

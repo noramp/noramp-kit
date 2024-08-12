@@ -9,7 +9,7 @@ import Marketplace from './routes/kyc';
 import Header from './components/header';
 import Layout from './components/layout';
 import Kyc from './routes/kyc';
-import USDC from './routes/usdc';
+import Wands from './routes/wands';
 
 import Payout from './routes/payout';
 import { NextUIProvider } from '@nextui-org/react';
@@ -49,10 +49,10 @@ const router = createHashRouter([
     ),
   },
   {
-    path: '/usdc',
+    path: '/wands',
     element: (
       <Layout>
-        <USDC />
+        <Wands />
       </Layout>
     ),
   },

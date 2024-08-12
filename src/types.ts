@@ -28,7 +28,7 @@ export type NoRampConfig = {
   userCanEditWalletAddress?: string;
 };
 
-export type NoRampUSDCProps = {
+export type NoRampWandsProps = {
   theme?: 'light' | 'dark' | null;
   height?: string;
   width?: string;
