@@ -2,11 +2,11 @@ import React from 'react';
 import NoRampLogo from '../NoRampLogo';
 import { NoRampWandsProps } from '../../types';
 
-export const NoRampUSDC = ({
+export const NoRampWands = ({
   height = '440',
   width = '440',
 }: NoRampWandsProps) => {
-  let src = `https://usdc.noramp.io/swap`;
+  let src = `https://wands.xyz/swap`;
 
   const [openWidget, setOpenWidget] = React.useState(false);
 
@@ -35,7 +35,7 @@ export const NoRampUSDC = ({
       <span className="icon">
         <NoRampLogo />
       </span>
-      {<span>Get USDC with NoRamp</span>}
+      {<span>Get USDC with NoRamp Wands</span>}
     </button>
   );
 };
